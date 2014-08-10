@@ -1,0 +1,31 @@
+<contacts>
+<ami>
+<contact>
+ <nom>Dominique Lenne</nom>
+ <mail>dominique.lenne@uc.fr</mail>
+ <icone>/Users/hukewei/Dropbox/GI05/nf28/TD1/./src/image4.jpg</icone>
+</contact>
+<contact>
+ <nom>new contact</nom>
+ <mail>mail</mail>
+ <icone>/Users/hukewei/Dropbox/GI05/nf28/TD1/./src/image7.jpg</icone>
+</contact>
+</ami>
+<collegue>
+<contact>
+ <nom>Claude Moulin</nom>
+ <mail>claude.moulin@uc.fr</mail>
+ <icone>/Users/hukewei/Dropbox/GI05/nf28/TD1/./src/image7.jpg</icone>
+</contact>
+</collegue>
+<contact>
+ <nom>Marie-Helene Abel</nom>
+ <mail>marie-helene.abel@utc.fr</mail>
+ <icone>/Users/hukewei/Dropbox/GI05/nf28/TD1/./src/image3.jpg</icone>
+</contact>
+<contact>
+ <nom>Marcio Fuckner</nom>
+ <mail>marcio.fuckner@utc.fr</mail>
+ <icone>/Users/hukewei/Dropbox/GI05/nf28/TD1/./src/image0.jpg</icone>
+</contact>
+</contacts>

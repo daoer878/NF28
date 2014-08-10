@@ -1,0 +1,41 @@
+package tfd2;
+
+import java.awt.BorderLayout;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class DefinitionPane extends JPanel implements PropertyChangeListener{
+	private JList list;
+	private JTextArea resultArea = new JTextArea(); 
+	private JScrollPane scrollingArea;
+	
+	public DefinitionPane (String def){
+		
+		if (def == null){
+			resultArea.setText("");		
+		}
+		else
+			{resultArea.setText(def);}
+		
+		scrollingArea = new JScrollPane(resultArea);
+		
+		this.add(scrollingArea);
+	}
+
+	@Override
+	public void propertyChange(PropertyChangeEvent arg0) {
+		// TODO Auto-generated method stub
+		if (arg0.getPropertyName().equals("selection")) {
+			System.out.println(arg0.getNewValue());
+			this.resultArea.setText(((Mots)arg0.getNewValue()).getDefinitionEn());
+		}
+	}
+	
+	
+}

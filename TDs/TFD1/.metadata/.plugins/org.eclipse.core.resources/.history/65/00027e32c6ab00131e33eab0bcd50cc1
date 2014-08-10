@@ -1,0 +1,65 @@
+package tfd2;
+
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.JTextArea;
+
+public class DefinitionPane extends JPanel implements PropertyChangeListener{
+	private JList list;
+	private JTextArea resultAreaFr = new JTextArea(10,15);
+	private JTextArea resultAreaEn = new JTextArea(10,15);
+	private JScrollPane scrollingAreaFr;
+	private JScrollPane scrollingAreaEn; 
+	
+	public DefinitionPane (String def){
+		
+		if (def == null){
+			resultAreaFr.setText("");		
+		}
+		else
+			{resultAreaFr.setText(def);}
+		
+		scrollingAreaFr = new JScrollPane(resultAreaFr);
+		setScrollingAreaEn(new JScrollPane(resultAreaEn));
+		JSplitPane split_pane= new JSplitPane(0,scrollingAreaFr,resultAreaEn);
+		split_pane.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
+		split_pane.setDividerLocation(250);
+		this.add(split_pane);
+		
+		//this.add(scrollingArea);
+
+
+	}
+
+	public JTextArea getResualtAreaFr(){
+		return resultAreaFr;
+		
+	}
+	public JTextArea getResualtAreaEn(){
+		return resultAreaEn;
+		
+	}
+
+	public void propertyChange(PropertyChangeEvent arg0) {
+		// TODO Auto-generated method stub
+		if (arg0.getPropertyName().equals("selection")) {
+			System.out.println(arg0.getNewValue());
+			this.resultAreaFr.setText(((Mots)arg0.getNewValue()).getDefinitionEn());
+		}
+	}
+
+	public JScrollPane getScrollingAreaEn() {
+		return scrollingAreaEn;
+	}
+
+	public void setScrollingAreaEn(JScrollPane scrollingAreaEn) {
+		this.scrollingAreaEn = scrollingAreaEn;
+	}
+	
+	
+}

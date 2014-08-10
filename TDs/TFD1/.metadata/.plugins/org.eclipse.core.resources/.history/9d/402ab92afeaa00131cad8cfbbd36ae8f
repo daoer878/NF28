@@ -1,0 +1,63 @@
+package tfd2;
+
+
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.DefaultListModel;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
+//import td1.Console;
+
+public class ListView extends JFrame{
+	private String name;
+	private JMenuBar menu_bar;
+	private DefinitionPane definition_panel;
+	private JScrollPane mot_pane;
+	private JList<Mots> list_mot;
+	private ListMotDefModel model;
+	private JSplitPane split_pane;
+
+	public ListView(String name) {
+		this.name = name;
+		this.model= ListMotDefModel.getInstance();
+		this.menu_bar = new JMenuBar();
+		
+		this.definition_panel = new DefinitionPane();
+		this.mot_pane = new JScrollPane();
+		
+		//~~~~~~~~~~~~~~
+	    DefaultListModel listModel = new DefaultListModel();
+	    listModel.addElement("Debbie Scott");
+	    listModel.addElement("Scott Hommel");
+	    listModel.addElement("Sharon Zakhour");
+
+	    // Create the list and put it in a scroll pane.
+	    JList list = new JList(listModel);
+	    list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+	    list.setSelectedIndex(0);
+	    list.setVisibleRowCount(5);
+	    JScrollPane listScrollPane = new JScrollPane(list);
+	    add(listScrollPane, BorderLayout.CENTER);
+	    
+	  //~~~~~~~~~~~~~~
+		
+
+		this.setSize(500,500);
+		this.setTitle(this.name);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true); 
+	}
+}
