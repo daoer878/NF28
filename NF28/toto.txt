@@ -1,0 +1,7 @@
+hello=une salutation
+advert=annonce
+bye=au revoir
+case=affaire,occasion,cas
+face=figure,visage,surface
+leather=fait de cuir;en cuir@animal skin that has been treated to preserve it
+auspicious =qui se pr¨¦sente sous de favorables auspices@indicating future success
